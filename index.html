@@ -212,34 +212,42 @@
   .service-list li::before { content:''; width:5px; height:5px; border-radius:50%; background:var(--teal); flex-shrink:0; }
 
   /* ── ADVANTAGE ── */
+  /* ── ADVANTAGE ── */
   #advantage { background:var(--white); }
-  .adv-wrap { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; }
-  .adv-main-box {
-    background:linear-gradient(135deg,var(--teal) 0%,#1E7A6E 100%);
-    padding:3.5rem; border-radius:8px; position:relative; overflow:hidden;
-    box-shadow:0 24px 64px rgba(42,157,143,0.25);
+  .adv-wrap { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; /* This keeps them side-by-side on desktop */
+    gap: 5rem; 
+    align-items: center; 
   }
-  .adv-main-box::before {
-    content:''; position:absolute; top:-60px; right:-60px;
-    width:220px; height:220px; border-radius:50%; background:rgba(255,255,255,0.07);
+  .adv-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .adv-main-box {
+    background: linear-gradient(135deg,var(--teal) 0%,#1E7A6E 100%);
+    padding: 3.5rem; border-radius: 8px; position: relative; overflow: hidden;
+    box-shadow: 0 24px 64px rgba(42,157,143,0.25);
   }
   .adv-big-num {
-    font-family:'Playfair Display',serif; font-size:6rem; font-weight:700;
-    line-height:1; color:var(--white); position:relative; z-index:1;
+    font-family: 'Playfair Display',serif; font-size: 6rem; font-weight: 700;
+    line-height: 1; color: var(--white); position: relative; z-index: 1;
   }
   .adv-big-sub {
-    font-family:'Playfair Display',serif; font-size:1.1rem; font-style:italic;
-    color:rgba(255,255,255,0.8); margin-top:0.3rem; position:relative; z-index:1;
+    font-family: 'Playfair Display',serif; font-size: 1.1rem; font-style: italic;
+    color: rgba(255,255,255,0.8); margin-top: 0.3rem; position: relative; z-index: 1;
   }
   .adv-big-label {
-    font-size:0.87rem; color:rgba(255,255,255,0.65); line-height:1.65;
-    border-top:1px solid rgba(255,255,255,0.2); padding-top:1rem; margin-top:1rem;
-    position:relative; z-index:1;
+    font-size: 0.87rem; color: rgba(255,255,255,0.65); line-height: 1.65;
+    border-top: 1px solid rgba(255,255,255,0.2); padding-top: 1rem; margin-top: 1rem;
+    position: relative; z-index: 1;
   }
-  .adv-float-cards { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:1.4rem; }
+  .adv-float-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
   .adv-float-card {
-    background:var(--white); padding:1.5rem; border-radius:6px;
-    box-shadow:0 8px 24px rgba(42,157,143,0.12);
+    background: var(--white); padding: 1.5rem; border-radius: 6px;
+    border: 1px solid var(--border-soft);
+    box-shadow: 0 8px 24px rgba(42,157,143,0.12);
   }
   .adv-float-val { font-family:'Playfair Display',serif; font-size:1.8rem; font-weight:700; color:var(--teal); line-height:1; }
   .adv-float-lbl { font-size:0.62rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--slate-light); margin-top:0.3rem; }
@@ -603,6 +611,7 @@
           <div class="pillar-title">Verified Track Record</div>
           <div class="pillar-text">Every mandate backed by documented outcomes, not anecdote.</div>
         </div>
+    </div>
         <div class="pillar">
           <div class="pillar-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
           <div class="pillar-title">Curated Network</div>
