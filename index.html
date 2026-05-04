@@ -212,42 +212,34 @@
   .service-list li::before { content:''; width:5px; height:5px; border-radius:50%; background:var(--teal); flex-shrink:0; }
 
   /* ── ADVANTAGE ── */
-  /* ── ADVANTAGE ── */
   #advantage { background:var(--white); }
-  .adv-wrap { 
-    display: grid; 
-    grid-template-columns: 1fr 1fr; /* This keeps them side-by-side on desktop */
-    gap: 5rem; 
-    align-items: center; 
-  }
-  .adv-visual {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
+  .adv-wrap { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; }
   .adv-main-box {
-    background: linear-gradient(135deg,var(--teal) 0%,#1E7A6E 100%);
-    padding: 3.5rem; border-radius: 8px; position: relative; overflow: hidden;
-    box-shadow: 0 24px 64px rgba(42,157,143,0.25);
+    background:linear-gradient(135deg,var(--teal) 0%,#1E7A6E 100%);
+    padding:3.5rem; border-radius:8px; position:relative; overflow:hidden;
+    box-shadow:0 24px 64px rgba(42,157,143,0.25);
+  }
+  .adv-main-box::before {
+    content:''; position:absolute; top:-60px; right:-60px;
+    width:220px; height:220px; border-radius:50%; background:rgba(255,255,255,0.07);
   }
   .adv-big-num {
-    font-family: 'Playfair Display',serif; font-size: 6rem; font-weight: 700;
-    line-height: 1; color: var(--white); position: relative; z-index: 1;
+    font-family:'Playfair Display',serif; font-size:6rem; font-weight:700;
+    line-height:1; color:var(--white); position:relative; z-index:1;
   }
   .adv-big-sub {
-    font-family: 'Playfair Display',serif; font-size: 1.1rem; font-style: italic;
-    color: rgba(255,255,255,0.8); margin-top: 0.3rem; position: relative; z-index: 1;
+    font-family:'Playfair Display',serif; font-size:1.1rem; font-style:italic;
+    color:rgba(255,255,255,0.8); margin-top:0.3rem; position:relative; z-index:1;
   }
   .adv-big-label {
-    font-size: 0.87rem; color: rgba(255,255,255,0.65); line-height: 1.65;
-    border-top: 1px solid rgba(255,255,255,0.2); padding-top: 1rem; margin-top: 1rem;
-    position: relative; z-index: 1;
+    font-size:0.87rem; color:rgba(255,255,255,0.65); line-height:1.65;
+    border-top:1px solid rgba(255,255,255,0.2); padding-top:1rem; margin-top:1rem;
+    position:relative; z-index:1;
   }
-  .adv-float-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .adv-float-cards { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:1.4rem; }
   .adv-float-card {
-    background: var(--white); padding: 1.5rem; border-radius: 6px;
-    border: 1px solid var(--border-soft);
-    box-shadow: 0 8px 24px rgba(42,157,143,0.12);
+    background:var(--white); padding:1.5rem; border-radius:6px;
+    box-shadow:0 8px 24px rgba(42,157,143,0.12);
   }
   .adv-float-val { font-family:'Playfair Display',serif; font-size:1.8rem; font-weight:700; color:var(--teal); line-height:1; }
   .adv-float-lbl { font-size:0.62rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--slate-light); margin-top:0.3rem; }
@@ -431,22 +423,7 @@
     .nav-links.open{display:flex;}
     .nav-links a{color:var(--ink)!important;font-size:1rem;}
     .hamburger{display:flex;z-index:101;}
-
-    /* FIXED SECTION START */
-    .hero-stats {
-      position: static; 
-      flex-direction: column; /* Changed from row to column */
-      align-items: flex-start; /* Keeps them left-aligned with your text */
-      gap: 1.5rem;
-      margin-top: 3rem;
-      animation: none;
-      opacity: 1;
-    }
-    .stat {
-      text-align: left; /* Ensures text doesn't lean to the right */
-    }
-    /* FIXED SECTION END */
-
+    .hero-stats{position:static;flex-direction:column;align-items: flex-start;gap: 1.5rem;margin-top: 3rem;animation: none;opacity: 1;}
     .hero-ring{display:none;}
     .services-header,.trust-header{grid-template-columns:1fr;gap:1.5rem;}
     .services-grid{grid-template-columns:1fr;}
@@ -574,15 +551,13 @@
 </section>
 
 <!-- ADVANTAGE -->
-<<section id="advantage">
+<section id="advantage">
   <div class="adv-wrap">
-    
-    <!-- LEFT SIDE: The Green Box and Small Cards -->
     <div class="adv-visual reveal">
       <div class="adv-main-box">
         <div class="adv-big-num">9+</div>
         <div class="adv-big-sub">Years of Institutional Deal-Making</div>
-        <div class="adv-big-label">Deep-rooted relationships across PE funds, strategic buyers & growth-stage enterprises across India.</div>
+        <div class="adv-big-label">Deep-rooted relationships across PE funds, strategic buyers &amp; growth-stage enterprises across India.</div>
       </div>
       <div class="adv-float-cards">
         <div class="adv-float-card">
@@ -603,34 +578,37 @@
         </div>
       </div>
     </div>
-
-    <!-- RIGHT SIDE: The Text Section (Ensure this is INSIDE the adv-wrap) -->
     <div class="adv-right">
-      <div class="section-eyebrow">The XRTM Advantage</div>
-      <h2 class="section-title">Why High-Stakes Clients Choose <em>Us</em></h2>
-      <p class="section-body">We operate where institutional credibility, sector depth, and relentless execution converge. Our mandate is singular: deliver capital events that create lasting enterprise value.</p>
-      
-      <div class="adv-pillars">
+      <div class="section-eyebrow reveal">The XRTM Advantage</div>
+      <h2 class="section-title reveal reveal-d1">Why High-Stakes Clients<br>Choose <em>Us</em></h2>
+      <p class="section-body reveal reveal-d2">We operate where institutional credibility, sector depth, and relentless execution converge. Our mandate is singular: deliver capital events that create lasting enterprise value.</p>
+      <div class="adv-pillars reveal reveal-d3">
         <div class="pillar">
-          <div class="pillar-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-          </div>
+          <div class="pillar-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
           <div class="pillar-title">Verified Track Record</div>
           <div class="pillar-text">Every mandate backed by documented outcomes, not anecdote.</div>
         </div>
         <div class="pillar">
-          <div class="pillar-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-          </div>
+          <div class="pillar-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+          <div class="pillar-title">Curated Network</div>
+          <div class="pillar-text">Proprietary access to 200+ institutional investors and acquirers.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
           <div class="pillar-title">Execution Velocity</div>
           <div class="pillar-text">Parallel workstreams compress deal timelines significantly.</div>
         </div>
+        <div class="pillar">
+          <div class="pillar-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div>
+          <div class="pillar-title">ROI-First Advisory</div>
+          <div class="pillar-text">Performance-linked fees. We win only when you close.</div>
+        </div>
       </div>
     </div>
+  </div>
+</section>
 
-  </div> <!-- CRITICAL: This closes the adv-wrap grid -->
-</section> <!-- This closes the section -->
-
+<!-- PROCESS -->
 <section id="process">
   <div class="process-header reveal">
     <div class="section-eyebrow">How We Work</div>
@@ -663,6 +641,8 @@
     <div class="logo-slot"><div class="logo-ph"></div></div>
     <div class="logo-slot"><div class="logo-ph"></div></div>
   </div>
+  <div class="testimonials-slider reveal">
+    <div class="testimonials-track" id="testimonialTrack">
     </div>
     <div class="slider-controls">
       <div class="slider-dots" id="sliderDots"></div>
@@ -686,7 +666,7 @@
         </div>
         <div class="contact-detail">
           <div class="contact-detail-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg></div>
-          <div class="contact-detail-text"><span class="contact-detail-label">Phone</span>+91 915800 2445</div>
+          <div class="contact-detail-text"><span class="contact-detail-label">Phone</span>+91 9158002445</div>
         </div>
         <div class="contact-detail">
           <div class="contact-detail-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
@@ -758,7 +738,7 @@
   document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open')));
   const observer = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);} }), {threshold:0.1});
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-   function handleSubmit(btn){btn.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg> Submitted — We\'ll be in touch within 24 hours';btn.style.background='linear-gradient(135deg,#52B788,#2A9D8F)';btn.disabled=true;}
+  function handleSubmit(btn){btn.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg> Submitted — We\'ll be in touch within 24 hours';btn.style.background='linear-gradient(135deg,#52B788,#2A9D8F)';btn.disabled=true;}
 </script>
 </body>
 </html>
