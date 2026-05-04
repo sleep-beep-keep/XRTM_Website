@@ -641,35 +641,6 @@
     <div class="logo-slot"><div class="logo-ph"></div></div>
     <div class="logo-slot"><div class="logo-ph"></div></div>
   </div>
-  <div class="testimonials-slider reveal">
-    <div class="testimonials-track" id="testimonialTrack">
-      <div class="testimonial">
-        <div class="test-meta">
-          <div class="test-name">Rajiv Mehta</div>
-          <div class="test-role">Managing Director</div>
-          <div class="test-divider"></div>
-          <div class="test-deal">₹85Cr M&A · Manufacturing</div>
-        </div>
-        <div class="test-quote">"XRTM brought us three qualified acquirers within 45 days — and we closed at a 22% premium to our initial valuation expectation. Their institutional network is genuinely unmatched."</div>
-      </div>
-      <div class="testimonial">
-        <div class="test-meta">
-          <div class="test-name">Priya Nair</div>
-          <div class="test-role">CFO, Series B Tech Co.</div>
-          <div class="test-divider"></div>
-          <div class="test-deal">₹120Cr Capital Raise · Technology</div>
-        </div>
-        <div class="test-quote">"The XRTM team moved with precision and discretion. Their preparation transformed what could have been a nine-month fundraise into a 60-day close on the best terms we had modelled."</div>
-      </div>
-      <div class="testimonial">
-        <div class="test-meta">
-          <div class="test-name">Arun Desai</div>
-          <div class="test-role">Founder &amp; CEO</div>
-          <div class="test-divider"></div>
-          <div class="test-deal">Strategic Partnership · Real Estate</div>
-        </div>
-        <div class="test-quote">"What sets XRTM apart is their understanding that every deal is a relationship. The partnership they structured has generated more value than the transaction itself."</div>
-      </div>
     </div>
     <div class="slider-controls">
       <div class="slider-dots" id="sliderDots"></div>
@@ -765,15 +736,7 @@
   document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open')));
   const observer = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);} }), {threshold:0.1});
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  let current = 0;
-  const track = document.getElementById('testimonialTrack');
-  const total = track.children.length;
-  const dotsContainer = document.getElementById('sliderDots');
-  for(let i=0;i<total;i++){const d=document.createElement('div');d.className='dot'+(i===0?' active':'');d.onclick=()=>goTo(i);dotsContainer.appendChild(d);}
-  function goTo(n){current=(n+total)%total;track.style.transform=`translateX(-${current*100}%)`;document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===current));}
-  function slideTestimonial(dir){goTo(current+dir);}
-  setInterval(()=>slideTestimonial(1),6000);
-  function handleSubmit(btn){btn.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg> Submitted — We\'ll be in touch within 24 hours';btn.style.background='linear-gradient(135deg,#52B788,#2A9D8F)';btn.disabled=true;}
+   function handleSubmit(btn){btn.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg> Submitted — We\'ll be in touch within 24 hours';btn.style.background='linear-gradient(135deg,#52B788,#2A9D8F)';btn.disabled=true;}
 </script>
 </body>
 </html>
