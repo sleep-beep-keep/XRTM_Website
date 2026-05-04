@@ -423,7 +423,22 @@
     .nav-links.open{display:flex;}
     .nav-links a{color:var(--ink)!important;font-size:1rem;}
     .hamburger{display:flex;z-index:101;}
-    .hero-stats{position:static;flex-direction:row;gap:2rem;margin-top:3rem;animation:none;opacity:1;}
+
+    /* FIXED SECTION START */
+    .hero-stats {
+      position: static; 
+      flex-direction: column; /* Changed from row to column */
+      align-items: flex-start; /* Keeps them left-aligned with your text */
+      gap: 1.5rem;
+      margin-top: 3rem;
+      animation: none;
+      opacity: 1;
+    }
+    .stat {
+      text-align: left; /* Ensures text doesn't lean to the right */
+    }
+    /* FIXED SECTION END */
+
     .hero-ring{display:none;}
     .services-header,.trust-header{grid-template-columns:1fr;gap:1.5rem;}
     .services-grid{grid-template-columns:1fr;}
