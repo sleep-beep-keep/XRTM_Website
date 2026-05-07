@@ -1096,87 +1096,94 @@
       <div class="section-eyebrow reveal">Initiate a Conversation</div>
       <h2 class="section-title reveal reveal-d1">Ready to Execute<br>Your Next <em>Deal?</em></h2>
       <p class="section-body reveal reveal-d2">We engage exclusively with serious principals. Share the outline of your mandate and we will revert within one business day.</p>
+      
       <div class="reveal reveal-d3">
         <div class="contact-detail">
-          <div class="contact-detail-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
+          <div class="contact-detail-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
           <div class="contact-detail-text"><span class="contact-detail-label">Email</span>connect@xrtm.in</div>
         </div>
+        
         <div class="contact-detail">
-          <div class="contact-detail-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg></div>
+          <div class="contact-detail-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          </div>
           <div class="contact-detail-text"><span class="contact-detail-label">Phone</span>+91 9158002445</div>
         </div>
+        
         <div class="contact-detail">
-          <div class="contact-detail-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+          <div class="contact-detail-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
           <div class="contact-detail-text"><span class="contact-detail-label">Office</span>Pune, Maharashtra — India</div>
         </div>
       </div>
-    </div>
-  <<form class="contact-form reveal reveal-d2" name="contact" method="POST" data-netlify="true">
-  <input type="hidden" name="form-name" value="contact" />
+    </div> <form class="contact-form reveal reveal-d2" id="contact-form" name="contact" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="contact" />
 
-  <div class="form-row">
-    <div class="form-group">
-      <label class="form-label">Company Name</label>
-      <input type="text" name="company" class="form-input" placeholder="Your Company" required>
-    </div>
-    <div class="form-group">
-      <label class="form-label">Your Name</label>
-      <input type="text" name="name" class="form-input" placeholder="Full Name" required>
-    </div>
-  </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Company Name</label>
+          <input type="text" name="company" class="form-input" placeholder="Your Company" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Your Name</label>
+          <input type="text" name="name" class="form-input" placeholder="Full Name" required>
+        </div>
+      </div>
 
-  <div class="form-row">
-    <div class="form-group">
-      <label class="form-label">Email Address</label>
-      <input type="email" name="email" class="form-input" placeholder="name@company.com" required>
-    </div>
-    <div class="form-group">
-      <label class="form-label">Phone Number</label>
-      <input type="tel" name="phone" class="form-input" placeholder="+91 XXXXX XXXXX">
-    </div>
-  </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" name="email" class="form-input" placeholder="name@company.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone Number</label>
+          <input type="tel" name="phone" class="form-input" placeholder="+91 XXXXX XXXXX">
+        </div>
+      </div>
 
-  <div class="form-row">
-    <div class="form-group">
-      <label class="form-label">Deal Type</label>
-      <select name="deal_type" class="form-select">
-        <option value="">Select Service</option>
-        <option>M&A Advisory — Buy-Side</option>
-        <option>M&A Advisory — Sell-Side</option>
-        <option>Capital Raising — Equity</option>
-        <option>Capital Raising — Debt</option>
-        <option>Strategic Business Development</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label class="form-label">Deal Size (INR)</label>
-      <select name="deal_size" class="form-select">
-        <option value="">Approximate Range</option>
-        <option>₹10Cr – ₹50Cr</option>
-        <option>₹50Cr – ₹150Cr</option>
-        <option>₹150Cr – ₹500Cr</option>
-        <option>₹500Cr+</option>
-      </select>
-    </div>
-  </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Deal Type</label>
+          <select name="deal_type" class="form-select">
+            <option value="">Select Service</option>
+            <option value="M&A Buy-Side">M&A Advisory — Buy-Side</option>
+            <option value="M&A Sell-Side">M&A Advisory — Sell-Side</option>
+            <option value="Capital Equity">Capital Raising — Equity</option>
+            <option value="Capital Debt">Capital Raising — Debt</option>
+            <option value="Strategic Business Development">Strategic Business Development</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Deal Size (INR)</label>
+          <select name="deal_size" class="form-select">
+            <option value="">Approximate Range</option>
+            <option value="10-50Cr">₹10Cr – ₹50Cr</option>
+            <option value="50-150Cr">₹50Cr – ₹150Cr</option>
+            <option value="150-500Cr">₹150Cr – ₹500Cr</option>
+            <option value="500Cr+">₹500Cr+</option>
+          </select>
+        </div>
+      </div>
 
-  <div class="form-group full">
-    <label class="form-label">Brief on the Mandate</label>
-    <textarea name="brief" class="form-textarea" placeholder="Describe your transaction objective, current stage, and expected timeline..."></textarea>
-  </div>
+      <div class="form-group full">
+        <label class="form-label">Brief on the Mandate</label>
+        <textarea name="brief" class="form-textarea" placeholder="Describe your transaction objective, current stage, and expected timeline..."></textarea>
+      </div>
 
-  <button type="submit" class="form-submit">
-    Submit Mandate Brief
-    <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M1 6.5h11M7 2l4.5 4.5L7 11"/>
-    </svg>
-  </button>
+      <button type="submit" class="form-submit">
+        Submit Mandate Brief
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M1 6.5h11M7 2l4.5 4.5L7 11"/>
+        </svg>
+      </button>
 
-  <p class="form-note">All submissions are treated as strictly confidential under NDA protocol.</p>
-</form>
-  </div>
-</section>
+      <p class="form-note">All submissions are treated as strictly confidential under NDA protocol.</p>
+    </form> 
 
+  </div> </section>
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">XR<span>TM</span>.in</div>
