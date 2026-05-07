@@ -1111,48 +1111,69 @@
         </div>
       </div>
     </div>
-    <div class="contact-form reveal reveal-d2">
-      <div class="form-row">
-        <div class="form-group"><label class="form-label">Company Name</label><input type="text" class="form-input" placeholder="Your Company"></div>
-        <div class="form-group"><label class="form-label">Your Name</label><input type="text" class="form-input" placeholder="Full Name"></div>
-      </div>
-      <div class="form-row">
-        <div class="form-group"><label class="form-label">Email Address</label><input type="email" class="form-input" placeholder="name@company.com"></div>
-        <div class="form-group"><label class="form-label">Phone Number</label><input type="tel" class="form-input" placeholder="+91 XXXXX XXXXX"></div>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">Deal Type</label>
-          <select class="form-select">
-            <option value="">Select Service</option>
-            <option>M&A Advisory — Buy-Side</option>
-            <option>M&A Advisory — Sell-Side</option>
-            <option>Capital Raising — Equity</option>
-            <option>Capital Raising — Debt</option>
-            <option>Strategic Business Development</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Deal Size (INR)</label>
-          <select class="form-select">
-            <option value="">Approximate Range</option>
-            <option>₹10Cr – ₹50Cr</option>
-            <option>₹50Cr – ₹150Cr</option>
-            <option>₹150Cr – ₹500Cr</option>
-            <option>₹500Cr+</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-group full">
-        <label class="form-label">Brief on the Mandate</label>
-        <textarea class="form-textarea" placeholder="Describe your transaction objective, current stage, and expected timeline..."></textarea>
-      </div>
-      <button type="button" class="form-submit" onclick="handleSubmit(this)">
-        Submit Mandate Brief
-        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 6.5h11M7 2l4.5 4.5L7 11"/></svg>
-      </button>
-      <p class="form-note">All submissions are treated as strictly confidential under NDA protocol.</p>
+    <form class="contact-form reveal reveal-d2" name="contact" method="POST" data-netlify="true">
+  <input type="hidden" name="form-name" value="contact" />
+
+  <div class="form-row">
+    <div class="form-group">
+      <label class="form-label">Company Name</label>
+      <input type="text" name="company" class="form-input" placeholder="Your Company" required>
     </div>
+    <div class="form-group">
+      <label class="form-label">Your Name</label>
+      <input type="text" name="name" class="form-input" placeholder="Full Name" required>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label class="form-label">Email Address</label>
+      <input type="email" name="email" class="form-input" placeholder="name@company.com" required>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Phone Number</label>
+      <input type="tel" name="phone" class="form-input" placeholder="+91 XXXXX XXXXX">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label class="form-label">Deal Type</label>
+      <select name="deal_type" class="form-select">
+        <option value="">Select Service</option>
+        <option value="M&A Buy-Side">M&A Advisory — Buy-Side</option>
+        <option value="M&A Sell-Side">M&A Advisory — Sell-Side</option>
+        <option value="Capital Equity">Capital Raising — Equity</option>
+        <option value="Capital Debt">Capital Raising — Debt</option>
+        <option value="Strategic Development">Strategic Business Development</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Deal Size (INR)</label>
+      <select name="deal_size" class="form-select">
+        <option value="">Approximate Range</option>
+        <option value="10-50Cr">₹10Cr – ₹50Cr</option>
+        <option value="50-150Cr">₹50Cr – ₹150Cr</option>
+        <option value="150-500Cr">₹150Cr – ₹500Cr</option>
+        <option value="500Cr+">₹500Cr+</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group full">
+    <label class="form-label">Brief on the Mandate</label>
+    <textarea name="brief" class="form-textarea" placeholder="Describe your transaction objective, current stage, and expected timeline..."></textarea>
+  </div>
+
+  <button type="submit" class="form-submit">
+    Submit Mandate Brief
+    <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M1 6.5h11M7 2l4.5 4.5L7 11"/>
+    </svg>
+  </button>
+
+  <p class="form-note">All submissions are treated as strictly confidential under NDA protocol.</p>
+</form>
   </div>
 </section>
 
