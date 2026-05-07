@@ -51,27 +51,31 @@
     height: 100%;
   }
   
-  .nav-logo img {
-    height: 50px; /* Matching the HTML */
-    width: auto;
-    display: block;
-    object-fit: contain;
-    /* Make the logo white so it's visible on the dark background */
-    filter: brightness(0) invert(1);
-    transition: filter 0.3s ease;
-  }
+  .nav-logo {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+}
 
-  /* When the page scrolls and the background turns light, make the logo dark again */
-  nav.scrolled .nav-logo img {
-    filter: none;
-  } /* Removes the white filter so the logo shows its original color (or darkens) */
+ .nav-logo img {
+  height: 65px; /* Large enough to read the sub-text clearly */
+  width: auto;
+  display: block;
+  /* This turns the dark logo white so it stands out on the teal header */
+  filter: brightness(0) invert(1); 
+  transition: all 0.3s ease;
+}
 
+/* When you scroll and the header turns white, we turn the logo back to original colors */
+ nav.scrolled .nav-logo img {
+  filter: none;
+}
   .nav-links { display:flex; align-items:center; gap:2.4rem; list-style:none; }
   .nav-links a {
     color:rgba(255,255,255,0.82); text-decoration:none;
     font-size:0.74rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase;
     transition:color 0.2s;
-  }
+}
   nav.scrolled .nav-links a { color:var(--ink-soft); }
   .nav-links a:hover { color:var(--white); }
   nav.scrolled .nav-links a:hover { color:var(--teal); }
@@ -681,9 +685,9 @@
 
 <!-- NAV -->
 <nav id="mainNav">
-<<a href="#" class="nav-logo">
-  <img src="logo-cropped.png" alt="XRTM Strategic Advisors" style="height: 50px; width: auto; display: block;">
-</a>  
+<a href="#" class="nav-logo">
+  <img src="logo-nav.png" alt="XRTM Strategic Ventures">
+</a> 
 <ul class="nav-links" id="navLinks">
     <li><a href="#services">Services</a></li>
     <li><a href="#advantage">Advantage</a></li>
