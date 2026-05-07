@@ -45,12 +45,23 @@
     box-shadow:0 2px 28px rgba(42,157,143,0.1); padding:0.9rem 5%;
   }
   .nav-logo {
-    font-family:'Playfair Display',serif; font-size:1.6rem; font-weight:700;
-    letter-spacing:0.06em; color:var(--white); text-decoration:none;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    height: 100%;
   }
-  .nav-logo span { color:#A8ECDF; }
-  nav.scrolled .nav-logo { color:var(--ink); }
-  nav.scrolled .nav-logo span { color:var(--teal); }
+  
+  .nav-logo img {
+    height: 32px; /* Adjust this number to make logo bigger/smaller */
+    width: auto;
+    filter: brightness(0) invert(1); /* This makes a black logo turn white for the dark header */
+    transition: all 0.3s ease;
+  }
+
+  /* When the page scrolls, we change the logo color to match the dark text */
+  nav.scrolled .nav-logo img {
+    filter: none; /* Removes the white filter so the logo shows its original color (or darkens) */
+  }
   .nav-links { display:flex; align-items:center; gap:2.4rem; list-style:none; }
   .nav-links a {
     color:rgba(255,255,255,0.82); text-decoration:none;
@@ -666,8 +677,9 @@
 
 <!-- NAV -->
 <nav id="mainNav">
-  <a href="#" class="nav-logo">XR<span>TM</span>.in</a>
-  <ul class="nav-links" id="navLinks">
+<a href="#" class="nav-logo">
+    <img src="logo.png" alt="XRTM Logo">
+</a>  <ul class="nav-links" id="navLinks">
     <li><a href="#services">Services</a></li>
     <li><a href="#advantage">Advantage</a></li>
     <li><a href="#process">Process</a></li>
