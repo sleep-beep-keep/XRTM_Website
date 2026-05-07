@@ -34,34 +34,42 @@
   body { font-family:'DM Sans',sans-serif; background:var(--white); color:var(--ink); overflow-x:hidden; }
 
   /* ── NAV ── */
+  /* ── NAV ── */
   nav {
     position:fixed; top:0; left:0; right:0; z-index:100;
     display:flex; align-items:center; justify-content:space-between;
-    padding:1.4rem 5%;
-    transition:background 0.4s, box-shadow 0.4s, padding 0.4s;
+    /* We removed the vertical padding to let the logo define the height */
+    padding: 0 5%; 
+    height: 100px; 
+    transition: all 0.4s ease;
   }
+
   nav.scrolled {
     background:rgba(255,255,255,0.96); backdrop-filter:blur(16px);
-    box-shadow:0 2px 28px rgba(42,157,143,0.1); padding:0.9rem 5%;
+    box-shadow:0 2px 28px rgba(42,157,143,0.1); 
+    height: 70px; /* Shrinks slightly when you scroll */
   }
+
   .nav-logo {
     display: flex;
     align-items: center;
-    height: 80px; /* This forces the container to be large enough */
     text-decoration: none;
-}
+    height: 100%; /* Important: it fills the nav height */
+  }
 
-.nav-logo img {
-    height: 55px !important; /* Forces the image height */
+  .nav-logo img {
+    height: 65px; /* This is the "Full Size" command */
     width: auto;
     display: block;
     filter: brightness(0) invert(1);
-    object-fit: contain;
-}
+    transition: all 0.3s ease;
+  }
 
-nav.scrolled .nav-logo img {
+  /* Shrink the logo slightly on scroll for a premium feel */
+  nav.scrolled .nav-logo img {
+    height: 45px; 
     filter: none;
-}
+  }
   .nav-links { display:flex; align-items:center; gap:2.4rem; list-style:none; }
   .nav-links a {
     color:rgba(255,255,255,0.82); text-decoration:none;
