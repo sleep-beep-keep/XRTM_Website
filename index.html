@@ -70,7 +70,7 @@
 
   /* ── HERO ── */
   #hero {
-    min-height:100vh; display:flex; align-items:center; flex-direction:column; justify-content:center;
+    min-height:100vh; display:flex; align-items:center;
     position:relative; overflow:hidden; padding:120px 5% 80px;
     background:linear-gradient(135deg,#1A3A45 0%,#1E5F6B 40%,#2A7D72 70%,#2A9D8F 100%);
   }
@@ -106,8 +106,19 @@
     content:''; position:absolute; inset:125px; border-radius:50%;
     border:1px solid rgba(168,236,223,0.2);
   }
-  .hero-content { position:relative; z-index:2; max-width:700px; width:100%; }
-  .hero-body { position:relative; z-index:2; display:flex; flex-direction:column; width:100%; }
+  .hero-body {
+    position:relative; z-index:2;
+    display:grid; grid-template-columns:1fr auto;
+    align-items:end; gap:3rem; width:100%;
+  }
+  .hero-content { max-width:680px; width:100%; }
+  .hero-stats {
+    position:static; z-index:2;
+    display:flex; flex-direction:column; gap:2rem; flex-wrap:nowrap;
+    align-items:flex-end; padding-bottom:0.25rem;
+    opacity:0; animation:fadeUp 0.9s 1.1s forwards;
+  }
+  .stat { text-align:right; }
   .hero-eyebrow {
     display:inline-flex; align-items:center; gap:0.7rem;
     font-size:0.68rem; font-weight:600; letter-spacing:0.28em; text-transform:uppercase;
@@ -150,13 +161,6 @@
     transition:border-color 0.25s, color 0.25s, background 0.25s;
   }
   .btn-outline:hover { border-color:rgba(255,255,255,0.7); background:rgba(255,255,255,0.08); color:var(--white); }
-  .hero-stats {
-    position:static; z-index:2;
-    display:flex; gap:2.5rem; flex-wrap:wrap;
-    margin-top:auto; padding-top:4rem;
-    opacity:0; animation:fadeUp 0.9s 1.1s forwards;
-  }
-  .stat { text-align:left; }
   .stat-num { font-family:'Playfair Display',serif; font-size:2.4rem; font-weight:700; color:var(--white); line-height:1; }
   .stat-num span { color:#A8ECDF; }
   .stat-label { font-size:0.6rem; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.42); margin-top:0.3rem; }
@@ -529,13 +533,15 @@
     .nav-links a { color:var(--ink)!important; font-size:1rem; }
     .hamburger { display:flex; z-index:101; }
 
-    /* Hero — pull stats inline below content */
+    /* Hero */
     #hero { padding:100px 5% 60px; min-height:100vh; }
     .hero-content { max-width:100%; }
     .hero-ring { display:none; }
     .hero-blob1 { width:320px; height:320px; right:-60px; top:-40px; }
     .hero-blob2 { width:240px; height:240px; }
-    .hero-stats { padding-top:2.5rem; gap:2rem; }
+    .hero-body { grid-template-columns:1fr; gap:2.5rem; align-items:start; }
+    .hero-stats { flex-direction:row; align-items:flex-start; flex-wrap:wrap; gap:2rem; padding-top:0; }
+    .stat { text-align:left; }
 
     /* Sections */
     section { padding:80px 5%; }
@@ -589,7 +595,7 @@
     .btn-primary,
     .btn-outline { padding:0.85rem 1.4rem; font-size:0.72rem; width:100%; justify-content:center; }
     .hero-actions { flex-direction:column; gap:0.8rem; }
-    .hero-stats { gap:1.2rem; padding-top:2rem; }
+    .hero-stats { gap:1.2rem; }
     .stat-num { font-size:1.8rem; }
 
     /* Section typography */
