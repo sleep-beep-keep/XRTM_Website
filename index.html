@@ -52,16 +52,20 @@
   }
   
   .nav-logo img {
-    height: 32px; /* Adjust this number to make logo bigger/smaller */
+    height: 50px; /* Matching the HTML */
     width: auto;
-    filter: brightness(0) invert(1); /* This makes a black logo turn white for the dark header */
-    transition: all 0.3s ease;
+    display: block;
+    object-fit: contain;
+    /* Make the logo white so it's visible on the dark background */
+    filter: brightness(0) invert(1);
+    transition: filter 0.3s ease;
   }
 
-  /* When the page scrolls, we change the logo color to match the dark text */
+  /* When the page scrolls and the background turns light, make the logo dark again */
   nav.scrolled .nav-logo img {
-    filter: none; /* Removes the white filter so the logo shows its original color (or darkens) */
-  }
+    filter: none;
+  } /* Removes the white filter so the logo shows its original color (or darkens) */
+
   .nav-links { display:flex; align-items:center; gap:2.4rem; list-style:none; }
   .nav-links a {
     color:rgba(255,255,255,0.82); text-decoration:none;
@@ -677,9 +681,10 @@
 
 <!-- NAV -->
 <nav id="mainNav">
-<a href="#" class="nav-logo">
-    <img src="logo.png" alt="XRTM Logo">
-</a>  <ul class="nav-links" id="navLinks">
+<<a href="#" class="nav-logo">
+  <img src="logo-cropped.png" alt="XRTM Strategic Advisors" style="height: 50px; width: auto; display: block;">
+</a>  
+<ul class="nav-links" id="navLinks">
     <li><a href="#services">Services</a></li>
     <li><a href="#advantage">Advantage</a></li>
     <li><a href="#process">Process</a></li>
