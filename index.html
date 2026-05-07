@@ -1194,33 +1194,69 @@
   /* ── NAV ── */
   const nav = document.getElementById('mainNav');
   window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
-  function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
-  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open')));
+  
+  function toggleNav() { 
+    document.getElementById('navLinks').classList.toggle('open'); 
+  }
+  
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+  });
 
   /* ── SCROLL REVEAL ── */
-  const observer = new IntersectionObserver(entries => entries.forEach(e => {
-    if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); }
-  }), {threshold:0.1});
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(e.isIntersecting){ 
+        e.target.classList.add('visible'); 
+        observer.unobserve(e.target); 
+      }
+    });
+  }, {threshold:0.1});
+  
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
   /* ── SECTOR TABS ── */
   function switchTab(btn, tabId) {
-    // Deactivate all buttons and panels
     document.querySelectorAll('.sector-tab-btn').forEach(b => b.classList.remove('active'));
     document.querySelectorAll('.sector-panel').forEach(p => p.classList.remove('active'));
-    // Activate selected
     btn.classList.add('active');
     document.getElementById('panel-' + tabId).classList.add('active');
   }
 
-  /* ── TESTIMONIAL SLIDER (empty for now) ── */
+  /* ── TESTIMONIAL SLIDER ── */
   function slideTestimonial(dir) {}
 
-  /* ── FORM ── */
-  function handleSubmit(btn){
-    btn.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg> Submitted — We\'ll be in touch within 24 hours';
-    btn.style.background='linear-gradient(135deg,#52B788,#2A9D8F)';
-    btn.disabled=true;
+  /* ── NETLIFY FORM HANDLING ── */
+  const contactForm = document.querySelector('form[name="contact"]');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault(); // This stops the "Site not reachable" error
+
+      const btn = contactForm.querySelector('.form-submit');
+      const formData = new FormData(contactForm);
+
+      // Loading State
+      btn.innerHTML = 'Sending...';
+      btn.disabled = true;
+
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      })
+      .then(() => {
+        // Success State (Your original design)
+        btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg> Submitted — We\'ll be in touch within 24 hours';
+        btn.style.background = 'linear-gradient(135deg,#52B788,#2A9D8F)';
+        contactForm.reset(); 
+      })
+      .catch((error) => {
+        console.error('Submission error:', error);
+        btn.innerHTML = 'Error. Please try again.';
+        btn.disabled = false;
+      });
+    });
   }
 </script>
 </body>
