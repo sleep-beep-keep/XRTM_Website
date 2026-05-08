@@ -537,15 +537,40 @@
   /* ── RESPONSIVE: TABLET (≤900px) ── */
   @media(max-width:900px){
     /* Nav */
-    nav { padding:1rem 5%; }
-    .nav-links {
-      display:none; position:fixed; top:0; left:0; right:0; bottom:0;
-      background:rgba(255,255,255,0.98); backdrop-filter:blur(16px);
-      flex-direction:column; justify-content:center; align-items:center; gap:2.5rem; z-index:50;
-    }
-    .nav-links.open { display:flex; }
-    .nav-links a { color:var(--ink)!important; font-size:1rem; }
-    .hamburger { display:flex; z-index:101; }
+   /* 1. Ensure the mobile nav covers EVERYTHING when open */
+.nav-links {
+    display: none; /* Default hidden */
+    position: fixed; /* Use fixed so it stays relative to screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98); /* Solid background to hide text behind */
+    z-index: 9999 !important; /* Forces it above all sections and buttons */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+/* 2. When the 'open' class is added via JS */
+.nav-links.open {
+    display: flex;
+}
+
+/* 3. Make the Hamburger icon stay on top so you can close the menu */
+.hamburger {
+    display: block;
+    z-index: 10000 !important; /* Higher than the nav-links */
+    cursor: pointer;
+    position: relative;
+}
+
+/* 4. Fix for that overlapping button in your screenshot */
+.form-submit, .btn, .cta-button {
+    z-index: 1; /* Keep standard buttons low */
+    position: relative;
+}
 
     /* Hero */
     #hero { padding:100px 5% 60px; min-height:100vh; }
