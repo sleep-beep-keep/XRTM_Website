@@ -230,6 +230,71 @@
   .service-list { list-style:none; display:flex; flex-direction:column; gap:0.5rem; }
   .service-list li { font-size:0.8rem; color:var(--slate-light); display:flex; align-items:center; gap:0.6rem; }
   .service-list li::before { content:''; width:5px; height:5px; border-radius:50%; background:var(--teal); flex-shrink:0; }
+  /* Card Container Fixes */
+.service-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 4px;
+  border: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.service-icon-circle {
+  width: 50px;
+  height: 50px;
+  background: rgba(42, 157, 143, 0.05);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.service-name {
+  font-size: 1.4rem;
+  color: #002233;
+  line-height: 1.3;
+  margin-bottom: 15px;
+}
+
+.service-description {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+/* Professional List Styling */
+.service-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+
+.service-feature-list li {
+  font-size: 0.88rem;
+  color: #555;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.service-feature-list li::before {
+  content: "•";
+  color: #2a9d8f;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.service-feature-list strong {
+  color: #002233;
+  font-weight: 600;
+  margin-right: 5px;
+}
 
   /* ── ADVANTAGE ── */
   #advantage { background:var(--white); }
@@ -779,20 +844,23 @@
         <li>Cross-Border Transactions</li>
       </ul>
     </div>
-  <div class="service-card reveal">
-    <div class="service-icon">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+    <div class="service-card reveal reveal-d2">
+  <div class="service-icon-wrap">
+    <div class="service-icon-circle">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2a9d8f" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
     </div>
-    <h3 class="service-name">Capital Advisory & Startup Funding</h3>
-    <p class="service-text">Strategic capital sourcing for both established enterprises and high-growth startups. We align your vision with the right institutional investors.</p>
-  
-    <ul class="service-list">
-      <li><strong>Venture Capital:</strong> Seed to Series A fundraising for startups.</li>
-      <li><strong>Private Equity:</strong> Growth capital and structured equity deals.</li>
-      <li><strong>Debt Syndication:</strong> Working capital and project finance.</li>
-      <li><strong>Investor Readiness:</strong> Pitch deck advisory & financial modeling.</li>
-      </ul>
   </div>
+  
+  <h3 class="service-name">Capital Advisory &<br>Startup Funding</h3>
+  <p class="service-description">Strategic capital sourcing for established enterprises and high-growth startups.</p>
+  
+  <ul class="service-feature-list">
+    <li><strong>Venture Capital:</strong> Seed to Series A fundraising</li>
+    <li><strong>Private Equity:</strong> Growth capital & equity deals</li>
+    <li><strong>Debt Syndication:</strong> Project & working capital</li>
+    <li><strong>Investor Readiness:</strong> Pitch decks & modeling</li>
+  </ul>
+</div>
     <div class="service-card reveal reveal-d4">
       <span class="service-num">03</span>
       <div class="service-icon">
