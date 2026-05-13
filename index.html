@@ -1435,6 +1435,17 @@ window.addEventListener('scroll', () => {
   };
 
   document.querySelector("form").addEventListener("submit", handleSubmit);
+  <script>
+  const phoneInput = document.getElementById('phone');
+
+  phoneInput.addEventListener('invalid', () => {
+    phoneInput.setCustomValidity('Please enter a valid international number starting with + and country code (e.g., +91).');
+  });
+
+  phoneInput.addEventListener('input', () => {
+    phoneInput.setCustomValidity('');
+  });
+</script>
 </script>
 </body>
 </html>
