@@ -1391,6 +1391,32 @@ window.addEventListener('scroll', () => {
       });
     });
   }
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const myForm = event.target;
+    const formData = new FormData(myForm);
+    
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => {
+        // Change button text to show success
+        const btn = myForm.querySelector('button[type="submit"]');
+        btn.textContent = "Message Sent!";
+        btn.style.backgroundColor = "#2a9d8f";
+        
+        // Redirect to home after 3 seconds
+        setTimeout(() => {
+          window.location.href = "/";
+        }, 3000);
+      })
+      .catch((error) => alert(error));
+  };
+
+  document.querySelector("form").addEventListener("submit", handleSubmit);
 </script>
 </body>
 </html>
