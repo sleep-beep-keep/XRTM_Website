@@ -1409,10 +1409,19 @@ window.addEventListener('scroll', () => {
       });
     });
   }
+  <script>
   const handleSubmit = (event) => {
+    const myForm = event.target;
+
+    // 1. Check if the form is valid based on your HTML patterns
+    if (!myForm.checkValidity()) {
+      // If it's NOT valid, stop here. The browser will show the pop-ups automatically.
+      return;
+    }
+
+    // 2. If valid, prevent the default reload and send the data
     event.preventDefault();
 
-    const myForm = event.target;
     const formData = new FormData(myForm);
     
     fetch("/", {
@@ -1421,12 +1430,10 @@ window.addEventListener('scroll', () => {
       body: new URLSearchParams(formData).toString(),
     })
       .then(() => {
-        // Change button text to show success
         const btn = myForm.querySelector('button[type="submit"]');
         btn.textContent = "Message Sent!";
         btn.style.backgroundColor = "#2a9d8f";
         
-        // Redirect to home after 3 seconds
         setTimeout(() => {
           window.location.href = "/";
         }, 3000);
@@ -1434,15 +1441,25 @@ window.addEventListener('scroll', () => {
       .catch((error) => alert(error));
   };
 
+  // Attach the listener
   document.querySelector("form").addEventListener("submit", handleSubmit);
-  const phoneInput = document.getElementById('phone');
 
+  // Custom Messaging Logic for Phone
+  const phoneInput = document.getElementById('phone');
   phoneInput.addEventListener('invalid', () => {
     phoneInput.setCustomValidity('Please enter a valid international number starting with + and country code (e.g., +91).');
   });
-
   phoneInput.addEventListener('input', () => {
     phoneInput.setCustomValidity('');
+  });
+
+  // Custom Messaging Logic for Email
+  const emailInput = document.getElementById('email');
+  emailInput.addEventListener('invalid', () => {
+    emailInput.setCustomValidity('Please enter a valid work email (e.g., name@company.com).');
+  });
+  emailInput.addEventListener('input', () => {
+    emailInput.setCustomValidity('');
   });
 </script>
 </body>
