@@ -1253,13 +1253,31 @@
       </div>
 
       <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">Email Address</label>
-          <input type="email" name="email" class="form-input" placeholder="name@company.com" required>
+  <div class="form-group">
+    <label class="form-label" for="email">Email Address</label>
+    <input 
+      type="email" 
+      id="email"
+      name="email" 
+      class="form-input" 
+      placeholder="name@company.com" 
+      required
+      title="Please enter a valid email address (e.g., name@company.com)"
+    >
+  </div>
+      <div class="form-group">
+        <label class="form-label" for="phone">Phone Number</label>
+      <input 
+      type="tel" 
+      id="phone"
+      name="phone" 
+      class="form-input" 
+      placeholder="+91 XXXXX XXXXX" 
+      required
+      pattern="^\+?[1-9]\d{1,14}$"
+      title="Please enter a valid international phone number (e.g., +91 98765 43210). Must start with + and include country code."
+    >
         </div>
-        <div class="form-group">
-          <label class="form-label">Phone Number</label>
-          <input type="tel" name="phone" class="form-input" placeholder="+91 XXXXX XXXXX">
         </div>
       </div>
 
