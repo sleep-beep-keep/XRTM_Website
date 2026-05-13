@@ -1262,12 +1262,13 @@
       class="form-input" 
       placeholder="name@company.com" 
       required
-      title="Please enter a valid email address (e.g., name@company.com)"
+      oninvalid="this.setCustomValidity('Please enter a valid work email (e.g., name@company.com)')"
+      oninput="this.setCustomValidity('')"
     >
   </div>
-      <div class="form-group">
-        <label class="form-label" for="phone">Phone Number</label>
-      <input 
+  <div class="form-group">
+    <label class="form-label" for="phone">Phone Number</label>
+    <input 
       type="tel" 
       id="phone"
       name="phone" 
@@ -1275,12 +1276,11 @@
       placeholder="+91 XXXXX XXXXX" 
       required
       pattern="^\+?[1-9]\d{1,14}$"
-      title="Please enter a valid international phone number (e.g., +91 98765 43210). Must start with + and include country code."
+      oninvalid="this.setCustomValidity('Please enter a valid number starting with + and country code (e.g., +91)')"
+      oninput="this.setCustomValidity('')"
     >
-        </div>
-        </div>
-      </div>
-
+  </div>
+</div>
       <div class="form-row">
         <div class="form-group">
           <label class="form-label">Deal Type</label>
