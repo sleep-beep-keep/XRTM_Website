@@ -53,14 +53,16 @@
     background:rgba(255,255,255,0.96); backdrop-filter:blur(16px);
     box-shadow:0 2px 28px rgba(42,157,143,0.1); padding:0.9rem 5%;
   }
+  
   .nav-logo {
     font-family:'Playfair Display',serif; font-size:1.6rem; font-weight:700;
     letter-spacing:0.06em; color:var(--white); text-decoration:none;
   }
-  .nav-logo span { color:#A8ECDF; }
-  nav.scrolled .nav-logo { color:var(--ink); }
-  nav.scrolled .nav-logo span { color:var(--teal); }
-  .nav-links { display:flex; align-items:center; gap:2.4rem; list-style:none; }
+  .logo-xr { color: var(--white); }
+.logo-tm { color: #A8ECDF; }
+nav.scrolled .logo-xr { color: var(--ink); }
+nav.scrolled .logo-tm { color: var(--teal); }
+.nav-links { display:flex; align-items:center; gap:2.4rem; list-style:none; }
   .nav-links a {
     color:rgba(255,255,255,0.82); text-decoration:none;
     font-size:0.74rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase;
@@ -779,7 +781,10 @@
 
 <!-- NAV -->
 <nav id="mainNav">
-  <a href="#" class="nav-logo">XR<span>TM</span></a>
+<a href="/" class="nav-logo">
+  <span class="logo-xr">XR</span><span class="logo-tm">TM</span><br>
+  <span style="font-size:0.55rem; letter-spacing:0.22em; font-weight:400; font-style:normal; display:block; margin-top:1px;">STRATEGIC VENTURES</span>
+</a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#services">Services</a></li>
     <li><a href="#advantage">Advantage</a></li>
@@ -1323,7 +1328,13 @@
   </div> </section>
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">XR<span>TM</span></div>
+<div class="footer-brand">
+<div style="font-family:'Playfair Display',serif; font-size:1.35rem; font-weight:700; letter-spacing:0.06em; line-height:1.1; margin-bottom:20px;">
+  <span style="color:var(--white);">XR</span><span style="color:var(--teal-light);">TM</span><br>
+  <span style="font-size:0.5rem; letter-spacing:0.22em; font-weight:400; color:rgba(255,255,255,0.45); font-family:'DM Sans',sans-serif; display:block; margin-top:4px;">STRATEGIC VENTURES</span>
+</div>
+  <p>© 2026 XRTM Strategic Ventures — All rights reserved.</p>
+</div>
   <ul class="footer-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#advantage">About</a></li>
@@ -1331,7 +1342,7 @@
     <li><a href="#sectors">Sectors</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <div class="footer-copy">© <script>document.write(new Date().getFullYear())</script> XRTM Strategic Advisors — All rights reserved.</div>
+  <div class="footer-copy">© <script>document.write(new Date().getFullYear())</script> XRTM Strategic Venturess — All rights reserved.</div>
 </footer>
 
 <script>
